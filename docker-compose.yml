@@ -12,4 +12,5 @@ services:
 
     # environment:
     restart: always
+    # nginx by default run in daemon mode, thus without the option, exit(0); which will then always trigger a container restart.
     command: ["/usr/local/nginx/sbin/nginx", "-g", "daemon off;"]
