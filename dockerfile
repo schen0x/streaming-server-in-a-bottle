@@ -16,7 +16,7 @@ RUN wget https://github.com/sergey-dryabzhinsky/nginx-rtmp-module/archive/dev.zi
 RUN tar -zxvf nginx-1.15.1.tar.gz
 RUN unzip dev.zip
 
-WORKDIR $OHOME/nginx-1.15.1.tar.gz
+WORKDIR $OHOME/nginx-1.15.1
 RUN ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-dev
 RUN make
 RUN make install
