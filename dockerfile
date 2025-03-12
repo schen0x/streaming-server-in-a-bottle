@@ -20,6 +20,6 @@ RUN apt-get install -qy zlib1g-dev
 RUN ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-dev --with-cc-opt=-Wno-error
 RUN make
 RUN make install
-ADD ./nginxConf /usr/local/nginx/conf
+ADD ./nginx_conf /usr/local/nginx/conf
 # RUN /usr/local/nginx/sbin/nginx
 
