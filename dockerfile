@@ -16,8 +16,10 @@ RUN tar -zxvf nginx-1.15.1.tar.gz
 RUN unzip dev.zip
 
 WORKDIR $OHOME/nginx-1.15.1
-# RUN ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-dev
-# RUN make
-# RUN make install
+RUN apt-get install -qy zlib1g-dev
+RUN ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-dev
+RUN make --ignore-errors
+RUN make install
+ADD ./nginxConf /usr/local/nginx/conf
 # RUN /usr/local/nginx/sbin/nginx
 
