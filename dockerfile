@@ -17,8 +17,8 @@ RUN unzip dev.zip
 
 WORKDIR $OHOME/nginx-1.15.1
 RUN apt-get install -qy zlib1g-dev
-RUN ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-dev
-RUN make --ignore-errors
+RUN ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-dev --with-cc-opt=-Wno-error
+RUN make
 RUN make install
 ADD ./nginxConf /usr/local/nginx/conf
 # RUN /usr/local/nginx/sbin/nginx

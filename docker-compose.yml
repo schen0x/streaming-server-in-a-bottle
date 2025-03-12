@@ -12,4 +12,4 @@ services:
 
     # environment:
     restart: always
-    command: ["bash"]
+    command: ["/usr/local/nginx/sbin/nginx"]
