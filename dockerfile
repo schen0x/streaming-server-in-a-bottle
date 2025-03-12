@@ -4,6 +4,7 @@ RUN apt update -y -q
 RUN apt-get install -qy vim iptables curl iproute2 wget
 # https://obsproject.com/forum/resources/how-to-set-up-your-own-private-rtmp-server-using-nginx.50/
 RUN apt-get install -qy build-essential libpcre3 libpcre3-dev libssl-dev
+RUN apt-get install -qy unzip
 ARG OHOME=/etc/nginx
 # ARG CADIR=/etc/openvpn-ca
 RUN mkdir -p $OHOME
