@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  ##ref: https://github.com/shadowsocks/shadowsocks-libev/blob/master/docker/alpine/README.md
+  nginx:
+    build: .
+    container_name: streaming-server-in-a-bottle
+    ports:
+      - "1935:1935/tcp"
+    volumes:
+      - ./nginxconf:/usr/local/nginx/conf
+
+    # environment:
+    restart: always
+    command: ["bash"]
